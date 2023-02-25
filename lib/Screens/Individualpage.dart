@@ -50,9 +50,9 @@ class _IndividualPageState extends State<IndividualPage> {
                 ),
                 CircleAvatar(
                   child: SvgPicture.asset(
-                    widget.chatModel.isGroup
-                        ? "assets/" + widget.chatModel.icon
-                        : "assets/" + widget.chatModel.icon,
+                    widget.chatModel.isGroup!
+                        ? "assets/" + widget.chatModel.icon!
+                        : "assets/" + widget.chatModel.icon!,
                     color: Colors.white,
                     height: 37,
                     width: 37,
