@@ -1,6 +1,7 @@
 import 'package:chap_app/CustomUI/ButtonCard.dart';
 import 'package:chap_app/CustomUI/ContactCard.dart';
 import 'package:chap_app/Model/ChatModel.dart';
+import 'package:chap_app/Screens/CreateGroup.dart';
 import 'package:flutter/material.dart';
 
 class SelectContact extends StatefulWidget {
@@ -74,7 +75,12 @@ class _SelectContactState extends State<SelectContact> {
           itemCount: contacts.length + 2,
           itemBuilder: (context, indext) {
             if (indext == 0) {
-              return ButtonCard(name: "New Group", icon: Icons.group);
+              return InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (builder) => CreateGroup()));
+                  },
+                  child: ButtonCard(name: "New Group", icon: Icons.group));
             } else if (indext == 1) {
               return ButtonCard(name: "New Contact", icon: Icons.person_add);
             }
