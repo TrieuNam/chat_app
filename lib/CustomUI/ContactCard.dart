@@ -9,6 +9,7 @@ class ContacCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+
       leading: Container(
         height: 53,
         width: 50,
