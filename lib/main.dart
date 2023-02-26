@@ -1,7 +1,11 @@
+import 'package:camera/camera.dart';
+import 'package:chap_app/Screens/CameraScreen.dart';
 import 'package:chap_app/Screens/Homescreen.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+Future<void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  cameras =await availableCameras();
   runApp(const MyApp());
 }
 
@@ -23,9 +27,10 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-          fontFamily: "OpenSans",
-          primaryColor: Color(0xFF075E54),
-        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Color(0xFF128C7E)),
+        fontFamily: "OpenSans",
+        primaryColor: Color(0xFF075E54),
+        colorScheme:
+            ColorScheme.fromSwatch().copyWith(secondary: Color(0xFF128C7E)),
       ),
       home: const HomeScreen(),
     );
